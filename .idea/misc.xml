@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21944444444444444" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/buttons_background.xml" value="0.10277777777777777" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/header_background.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_about.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_check.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_email.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_feed.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_idnumber.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21944444444444444" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_lock.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_logout.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_notifications.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_person.xml" value="0.1037037037037037" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_phone.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_rate.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/ic_share.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/navigation_selector.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/drawable/navigation_view_item_selected.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_category_selected.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_donor_registration.xml" value="0.16168478260869565" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_login.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_notifications.xml" value="0.18885869565217392" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_recipient_registration.xml" value="0.1721014492753623" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_select_registration.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_sent_email.xml" value="0.19021739130434784" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/activity_splash_screen.xml" value="0.15353260869565216" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/header.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/notification_item.xml" value="0.14402173913043478" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/output_layout.xml" value="0.11666666666666667" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/layout/user_displayed_layout.xml" value="0.12409420289855072" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21944444444444444" />
+        <entry key="..\:/Users/DELL/AndroidBloodBank/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21944444444444444" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
