@@ -15,6 +15,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidBloodBank">
         <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManagedonorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShareActivity"
+            android:exported="false" />
+        <activity
             android:name=".NotificationsActivity"
             android:exported="false" />
         <activity

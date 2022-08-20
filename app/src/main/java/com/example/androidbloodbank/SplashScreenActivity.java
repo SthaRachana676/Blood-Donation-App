@@ -14,7 +14,6 @@ import android.widget.TextView;
 public class SplashScreenActivity extends AppCompatActivity {
     private ImageView logo;
     private TextView title,slogan;
-
     Animation topAnimation,bottomAnimation;
 
     @Override

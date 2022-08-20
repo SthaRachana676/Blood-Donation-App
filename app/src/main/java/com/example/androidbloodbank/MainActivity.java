@@ -56,7 +56,6 @@ private List<User> userList;
 
 private UserAdapter userAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,7 +145,7 @@ private UserAdapter userAdapter;
                 }
 
                 Menu nav_menu = nav_view.getMenu();
-                if (type.equals("donor")){
+                if (type.equals("recipient")){
                     nav_menu.findItem(R.id.sentEmail).setTitle("Received Email");
                     nav_menu.findItem(R.id.notification).setVisible(true);
                 }
@@ -288,6 +287,21 @@ private UserAdapter userAdapter;
             case  R.id.profile:
                 Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
                 startActivity(intent);
+                break;
+
+            case  R.id.share:
+                Intent intent15 = new Intent(MainActivity.this,ShareActivity.class);
+                startActivity(intent15);
+                break;
+
+            case  R.id.about:
+                Intent intent16 = new Intent(MainActivity.this,AboutActivity.class);
+                startActivity(intent16);
+                break;
+
+            case  R.id.changepassword:
+                Intent intent19 = new Intent(MainActivity.this,ChangePasswordActivity.class);
+                startActivity(intent19);
                 break;
 
             case R.id.logout:

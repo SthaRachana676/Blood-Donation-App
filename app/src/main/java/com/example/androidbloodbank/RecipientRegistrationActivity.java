@@ -153,6 +153,7 @@ public class RecipientRegistrationActivity extends AppCompatActivity {
                                 userInfo.put("bloodgroup",bloodGroup);
                                 userInfo.put("type","recipient");
                                 userInfo.put("search","recipient"+bloodGroup);
+                                userInfo.put("is_admin",0);
 
                                 userDatabaseRef.updateChildren(userInfo).addOnCompleteListener(new OnCompleteListener() {
                                     @Override

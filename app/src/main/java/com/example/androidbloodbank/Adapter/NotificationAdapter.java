@@ -2,6 +2,7 @@ package com.example.androidbloodbank.Adapter;
 
 import android.content.Context;
 import android.hardware.lights.LightState;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.notification_item,parent,false);
-        return new NotificationAdapter.ViewHolder(view);
+//        return new NotificationAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -47,6 +49,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
         holder.notification_text.setText(notification.getText());
         holder.notification_date.setText(notification.getDate());
+
 
         getUserInfo(holder.notification_profile_image, holder.notification_name,notification.getSenderId() );
     }
@@ -72,7 +75,9 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         }
     }
     private void getUserInfo(final CircleImageView circleImageView , final TextView  nameTextView , final String senderId) {
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users").child(senderId);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("\n" +
+                "notifications").child(senderId);
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

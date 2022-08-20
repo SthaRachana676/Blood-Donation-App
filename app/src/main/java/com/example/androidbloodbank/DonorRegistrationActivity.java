@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -105,10 +106,17 @@ public class DonorRegistrationActivity extends AppCompatActivity {
                 final String phoneNumber = registerPhoneNumber.getText().toString().trim();
                 final String bloodGroup = bloodGroupsSpinner.getSelectedItem().toString();
 
-                if(TextUtils.isEmpty(email)){
+                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+               // String pattern = "^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$";
+
+                if(email.matches(emailPattern)){
                     registerEmail.setError("Email is required!");
-                    return;
                 }
+//                if(TextUtils.isEmpty(email) || TextUtils.isEmpty(emailPattern) ){
+//                    registerEmail.setError("Email is required!");
+//                    return;
+//                }
                 if(TextUtils.isEmpty(password)){
                     registerPassword.setError("Password is required!");
                     return;
@@ -121,10 +129,14 @@ public class DonorRegistrationActivity extends AppCompatActivity {
                     registerIdNumber.setError("Id Number is required!");
                     return;
                 }
-                if(TextUtils.isEmpty(phoneNumber)){
-                    registerPhoneNumber.setError("Phone Number is required!");
+                if(registerPhoneNumber.equals("") || registerPhoneNumber.equals(null) || registerPhoneNumber.length()<10){
+                    registerPhoneNumber.setError("Enter a right mobile number");
                     return;
                 }
+//                if(TextUtils.isEmpty(phoneNumber)){
+//                    registerPhoneNumber.setError("Phone Number is required!");
+//                    return;
+//                }
                 if(bloodGroup.equals("Select Your Blood Group")){
                     Toast.makeText(DonorRegistrationActivity.this, "Select Blood Group", Toast.LENGTH_SHORT).show();
                     return;
@@ -142,9 +154,11 @@ public class DonorRegistrationActivity extends AppCompatActivity {
                                 String error = task.getException().toString();
                                 //Log.e("Error", error);
                                 Toast.makeText(DonorRegistrationActivity.this, "Error"+error, Toast.LENGTH_SHORT).show();
-                                //loader.dismiss();
+                                //loader.dismiss()
                             }
                             else {
+                             //   final FirebaseUser AUTH_USER = FirebaseAuth.getInstance().getCurrentUser()!=null ? FirebaseAuth.getInstance().getCurrentUser(): null ;
+
                                 String currentUserId = mAuth.getCurrentUser().getUid();
                                 userDatabaseRef = FirebaseDatabase.getInstance().getReference().child("users").child(currentUserId);
                                 HashMap userInfo = new HashMap();
@@ -156,11 +170,23 @@ public class DonorRegistrationActivity extends AppCompatActivity {
                                 userInfo.put("bloodgroup",bloodGroup);
                                 userInfo.put("type","donor");
                                 userInfo.put("search","donor"+bloodGroup);
+                                userInfo.put("is_admin",0);
 
                                 userDatabaseRef.updateChildren(userInfo).addOnCompleteListener(new OnCompleteListener() {
                                     @Override
                                     public void onComplete(@NonNull Task task) {
                                         if(task.isSuccessful()){
+//                                            FirebaseAuth.getInstance().getCurrentUser().sendEmailVerification()
+//                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                                        @Override
+//                                                        public void onComplete(@NonNull Task<Void> task) {
+//                                                            if(task.isSuccessful()){
+//                                                                Toast.makeText(DonorRegistrationActivity.this, "Registration Successfully . Please check your email for varification", Toast.LENGTH_SHORT).show();
+//                                                            }else{
+//                                                                Toast.makeText(DonorRegistrationActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                                                            }
+//                                                        }
+//                                                    });
                                             Toast.makeText(DonorRegistrationActivity.this, "Data set Successfully", Toast.LENGTH_SHORT).show();
                                         }else {
                                             Toast.makeText(DonorRegistrationActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();

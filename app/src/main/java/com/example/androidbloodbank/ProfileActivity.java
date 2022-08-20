@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -19,14 +20,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.net.URL;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private TextView type,name,email,idNumber,phoneNumber,bloodGroup;
+    private TextView type, name, email, idNumber, phoneNumber, bloodGroup;
     private CircleImageView profileImage;
     private Button backButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,16 +56,17 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
                     type.setText(snapshot.child("type").getValue().toString());
                     name.setText(snapshot.child("name").getValue().toString());
                     idNumber.setText(snapshot.child("idnumber").getValue().toString());
                     phoneNumber.setText(snapshot.child("phonenumber").getValue().toString());
                     bloodGroup.setText(snapshot.child("bloodgroup").getValue().toString());
                     email.setText(snapshot.child("email").getValue().toString());
-
-                    Glide.with(getApplicationContext()).load(snapshot.child("profilepictureurl").getValue().toString()).into(profileImage);
-
+                    if (snapshot.child("profilepictureurl").getValue() instanceof String)
+                    {
+                        Glide.with(getApplicationContext()).load(snapshot.child("profilepictureurl").getValue().toString()).into(profileImage);
+                    }
 
                 }
             }
@@ -75,7 +80,7 @@ public class ProfileActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this,MainActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -84,10 +89,10 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
-                return  true;
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
 

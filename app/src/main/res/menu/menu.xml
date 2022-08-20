@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item android:title="Management">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/about"
+                    android:icon="@drawable/ic_viewrequest"
+                    android:title="View Request"/>
+                <item
+                    android:id="@+id/mngdonor"
+                    android:icon="@drawable/ic_manage"
+                    app:showAsAction="always"
+                    android:title="Manage Donor"
+                    />
+                <item
+                    android:id="@+id/mngrecipient"
+                    android:icon="@drawable/ic_manage"
+                    app:showAsAction="always"
+                    android:title="Manage Recipient"
+                    />
+            </group>
+
+        </menu>
+    </item>
+
+    <item android:title="Actions">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Logout"/>
+
+            </group>
+
+        </menu>
+    </item>
+
+
+</menu>

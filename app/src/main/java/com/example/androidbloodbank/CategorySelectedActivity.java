@@ -88,7 +88,8 @@ private String title = "";
 
                 String bloodgroups = snapshot.child("bloodgroup").getValue().toString();
 
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users");
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference()
+                        .child("users");
                 Query query = reference.orderByChild("search").equalTo(result+bloodgroups);
                 query.addValueEventListener(new ValueEventListener() {
                     @Override

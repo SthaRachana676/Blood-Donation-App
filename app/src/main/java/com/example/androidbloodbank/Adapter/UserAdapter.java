@@ -30,6 +30,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.mail.MessagingException;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder>{
@@ -90,6 +92,7 @@ public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder>{
                                         String email = snapshot.child("email").getValue().toString();
                                         String phone = snapshot.child("phonenumber").getValue().toString();
                                         String  blood = snapshot.child("bloodgroup").getValue().toString();
+                                      //  String location = snapshot.child("location").getValue().toString();
 
                                         String mEmail = user.getEmail();
                                         String mSubject = "Blood Bank ";
@@ -102,7 +105,7 @@ public class UserAdapter extends  RecyclerView.Adapter<UserAdapter.ViewHolder>{
                                                 "kindly Reach out to his/her. Thank you!\n"
                                                 +"BLOOD BANK APP - DONATE BLOOD , SAVE LIVES!";
 
-                                        JavaMailApi javaMailApi = new JavaMailApi(context,mEmail,mSubject,mMessage);
+                                            JavaMailApi javaMailApi = new JavaMailApi(context,mEmail,mSubject,mMessage);
                                         javaMailApi.execute();
 
                                         DatabaseReference senderRef= FirebaseDatabase.getInstance().getReference("emails")

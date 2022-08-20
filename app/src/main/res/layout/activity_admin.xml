@@ -8,15 +8,13 @@
     tools:openDrawer="start"
     android:background="#fff"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".AdminActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -40,11 +38,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
-
-
-
+                android:layout_height="match_parent" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -54,13 +48,12 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        app:headerLayout="@layout/header"
-        app:menu="@menu/main_menu"
+        app:headerLayout="@layout/adminheader"
+        app:menu="@menu/menu"
         android:layout_gravity="start"
         app:itemIconTint="@drawable/navigation_selector"
         app:itemTextColor="@drawable/navigation_view_item_selected"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"/>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
